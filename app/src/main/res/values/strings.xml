@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Assignment1</string>
+
+    <string-array name="titles">
+        <item>username here</item>
+        <item>Home</item>
+        <item>Medicines</item>
+        <item>Nearest Doctors</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string-array name="medicines">
+        <item>NoisyBelly</item>
+        <item>Tylenol</item>
+    </string-array>
+
+    <string name="user_name">Joao Francisco</string>
+
+    <string name="title_activity_main">Menu</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

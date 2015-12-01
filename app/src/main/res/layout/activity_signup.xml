@@ -15,6 +15,13 @@
         android:layout_marginBottom="24dp"
         android:layout_gravity="center_horizontal" />
 
+    <EditText android:id="@+id/input_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Name" />
+
+
     <EditText android:id="@+id/input_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,23 +35,21 @@
         android:hint="Password"/>
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_signup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
         android:padding="12dp"
-        android:text="Login"
-        android:onClick="onClickLogin"/>
+        android:text="Create Account"
+        android:onClick="onClickSignup"/>
 
 
-    <TextView android:id="@+id/link_signup"
+    <TextView android:id="@+id/link_login"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="No account yet? Sign up"
+        android:text="Already a member? Login now"
         android:gravity="center"
         android:textSize="16dip"/>
-
 </LinearLayout>
-
