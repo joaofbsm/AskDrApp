@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Assignment1</string>
 
+    <string name="prefence_file_key">com.example.joaofbsm.assignment1.preferences</string>
+
     <string-array name="titles">
         <item>username here</item>
         <item>Home</item>
