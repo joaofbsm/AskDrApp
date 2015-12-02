@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Assignment1</string>
+    <string name="app_name">AskDrApp</string>
 
     <string name="prefence_file_key">com.example.joaofbsm.assignment1.preferences</string>
 
@@ -16,9 +16,7 @@
         <item>Tylenol</item>
     </string-array>
 
-    <string name="user_name">Joao Francisco</string>
-
-    <string name="title_activity_main">Menu</string>
+    <string name="user_name">Default</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

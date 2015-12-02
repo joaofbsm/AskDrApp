@@ -12,9 +12,6 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    SharedPreferences preferences = null;
-    SharedPreferences.Editor editor = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,19 +27,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        preferences = getSharedPreferences(getString(R.string.prefence_file_key), Context.MODE_PRIVATE);
-        editor = preferences.edit();
-        if(preferences.getString("email", null) != null && preferences.getString("password", null) != null) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
-
     public void onClickLogin(View view) {
         EditText emailInput = (EditText) findViewById(R.id.input_email);
         EditText passwordInput = (EditText) findViewById(R.id.input_password);
@@ -54,10 +38,12 @@ public class LoginActivity extends AppCompatActivity {
             if((m.getEmail().equals(email)) && (m.getPassword().equals(password))) {
                 Toast.makeText(getApplicationContext(), "Redirecting...",Toast.LENGTH_SHORT).show();
 
-                preferences = getSharedPreferences(getString(R.string.prefence_file_key), Context.MODE_PRIVATE);
-                editor = preferences.edit();
-                editor.putString("email", email);
-                editor.putString("password", password);
+                SharedPreferences preferences = getSharedPreferences(getString(R.string.prefence_file_key), Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+
+                editor.putString("user_name", m.getName());
+                editor.putString("user_email", email);
+                editor.putString("user_password", password);
                 editor.commit();
 
                 Intent intent = new Intent(this, MainActivity.class);
@@ -74,9 +60,20 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * TODO
      *
-     * - Login/Signup Error
-     * - Settings menu
-     * - First Login
+     * - Show User name
+     * - Add Content
+     * - Map app
+     * - Maybe use DB
+     */
+
+    /**
+     * GIT LOG
+     *
+     * - Icons now VectorDrawable
+     * - Main is now main
+     * - Minor change on style
+     * - Change in NavDrawer content and icons
+     * - Logout function added
      *
      */
 
