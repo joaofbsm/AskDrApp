@@ -60,20 +60,20 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * TODO
      *
-     * - Show User name
-     * - Add Content
-     * - Map app
+     * - Add Content(Create fragments, main menu)
+     * - Map Activity(Check GPS and turn on)
+     * - Add Comments
+     *
      * - Maybe use DB
+     *
      */
 
     /**
      * GIT LOG
      *
-     * - Icons now VectorDrawable
-     * - Main is now main
-     * - Minor change on style
-     * - Change in NavDrawer content and icons
-     * - Logout function added
+     * - About Activity
+     * - Show user name
+     * - Map Activity
      *
      */
 

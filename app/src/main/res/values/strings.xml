@@ -3,23 +3,21 @@
 
     <string name="prefence_file_key">com.example.joaofbsm.assignment1.preferences</string>
 
-    <string-array name="titles">
-        <item>username here</item>
-        <item>Home</item>
-        <item>Medicines</item>
-        <item>Nearest Doctors</item>
-        <item>Settings</item>
-    </string-array>
+    <string name="title_activity_maps">Nearby Centres</string>
+
+    <string name="user_name">Default</string>
+
+    <string name="appVersion">AskDrApp 1.0</string>
+    <string name="appDeveloper">Developed by: Joao Francisco B. S. Martins</string>
+    <string name="contactEmail">Contact email: joaofbdsm@gmail.com</string>
+    <string name="appDesc">This app is the result of the final assignment for Mobile Application Development 2015/2 module at University of West London. </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string-array name="medicines">
         <item>NoisyBelly</item>
         <item>Tylenol</item>
     </string-array>
 
-    <string name="user_name">Default</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
 </resources>

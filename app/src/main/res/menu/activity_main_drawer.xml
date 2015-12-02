@@ -2,7 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group
-        android:id="@+id/menu_top"
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_diseases"
@@ -12,6 +11,11 @@
             android:id="@+id/nav_medicines"
             android:icon="@drawable/ic_menu_medicines"
             android:title="Medicines" />
+
+    </group>
+
+    <group
+        android:checkableBehavior="none">
         <item
             android:id="@+id/nav_centres"
             android:icon="@drawable/ic_menu_centres"
@@ -23,12 +27,7 @@
         android:checkableBehavior="none">
 
         <item
-                android:id="@+id/nav_about"
-                android:title="About" />
-
-        <item
             android:id="@+id/nav_logout"
             android:title="Logout" />
     </group>
-
 </menu>
