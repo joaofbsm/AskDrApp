@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Database Simulation
+ * Member Class and a database simulation of the existing system members(so the login/signup can work properly)
  */
 public class Member {
 
@@ -13,6 +13,7 @@ public class Member {
     private String email;
     private String password;
 
+    // Database simulation
     public static List<Member> members = new ArrayList<>(Arrays.asList(new Member("Test", "test@test.com", "test"),
                                                                        new Member("Joao Francisco", "joaofbdsm@gmail.com", "123456")));
 

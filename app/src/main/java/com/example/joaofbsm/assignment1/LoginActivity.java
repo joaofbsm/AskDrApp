@@ -17,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Makes the TextView Clickable
         TextView signup = (TextView) findViewById(R.id.link_signup);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // Check if the user information is correct and then redirects him to the database
     public void onClickLogin(View view) {
         EditText emailInput = (EditText) findViewById(R.id.input_email);
         EditText passwordInput = (EditText) findViewById(R.id.input_password);
@@ -35,9 +37,11 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
 
         for(Member m : Member.members) {
+            // Checks if credentials are valid
             if((m.getEmail().equals(email)) && (m.getPassword().equals(password))) {
                 Toast.makeText(getApplicationContext(), "Redirecting...",Toast.LENGTH_SHORT).show();
 
+                // Save informations to SharedPreferences for post use
                 SharedPreferences preferences = getSharedPreferences(getString(R.string.prefence_file_key), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
 
@@ -46,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString("user_password", password);
                 editor.commit();
 
+                // Redirects to the main activity thus logging the user in, and finishes the current activity so the user can't get back here
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -53,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
+        // If the credentials are not valid, uses Toast widget to show it on the screen
         Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
     }
 }

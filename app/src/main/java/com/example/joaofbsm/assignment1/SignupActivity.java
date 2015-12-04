@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * Gives the user the opportunity to create an account to login on the app
+ */
 public class SignupActivity extends AppCompatActivity {
 
     @Override
@@ -14,6 +17,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        // Makes the TextView Clickable
         TextView login = (TextView) findViewById(R.id.link_login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +28,7 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
+    // Adds the given information to the database and thus creates a new registered user
     public void onClickSignup(View view) {
         EditText name = (EditText) findViewById(R.id.input_name);
         EditText email = (EditText) findViewById(R.id.input_email);
