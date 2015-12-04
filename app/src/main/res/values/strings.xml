@@ -7,17 +7,17 @@
 
     <string name="user_name">Default</string>
 
-    <string name="appVersion">AskDrApp 1.0</string>
-    <string name="appDeveloper">Developed by: Joao Francisco B. S. Martins</string>
-    <string name="contactEmail">Contact email: joaofbdsm@gmail.com</string>
+    <string name="user_email">default@default</string>
+
+    <!-- About Activity TextViews -->
+    <string name="appVersion"><b>AskDrApp 1.0</b></string>
+    <string name="appDeveloper"><b>Developed by:</b> Joao Francisco B. S. Martins</string>
+    <string name="contactEmail"><b>Contact email:</b> joaofbdsm@gmail.com</string>
     <string name="appDesc">This app is the result of the final assignment for Mobile Application Development 2015/2 module at University of West London. </string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string-array name="medicines">
-        <item>NoisyBelly</item>
-        <item>Tylenol</item>
-    </string-array>
+    <string name="intro_text">This is <b>your pocket doctor</b>, with you wherever you are. With this app you can:\n\n • Easily get <b>useful medical information</b> on diseases and medications.\n • <b>Find medical centres</b> nearby and, maybe, save someone\'s life.\n\nGet started by checking your options on the navigation drawer widget on the <b>left side of your screen</b>.</string>
 
 </resources>

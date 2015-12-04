@@ -17,17 +17,6 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        TextView appdev = (TextView) findViewById((R.id.text_appDeveloper));
-        final SpannableStringBuilder sb1 = new SpannableStringBuilder(getString(R.string.appDeveloper));
-        final StyleSpan bss = new StyleSpan(android.graphics.Typeface.BOLD);
-        sb1.setSpan(bss, 0, 13, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        appdev.setText(sb1);
-
-        TextView contactEmail = (TextView) findViewById((R.id.text_contactEmail));
-        final SpannableStringBuilder sb2 = new SpannableStringBuilder(getString(R.string.contactEmail));
-        sb2.setSpan(bss, 0, 14, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        contactEmail.setText(sb2);
     }
 
     @Override

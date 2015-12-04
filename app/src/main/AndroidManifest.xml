@@ -22,8 +22,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".LoginActivity" />
+
         <activity android:name=".SignupActivity" />
+
+        <activity
+            android:name=".MedicationActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".DiseaseActivity"
+            android:theme="@style/AppTheme"/>
+
         <activity
             android:name=".AboutActivity"
             android:label="About"
@@ -39,10 +50,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
     </application>
 
 </manifest>

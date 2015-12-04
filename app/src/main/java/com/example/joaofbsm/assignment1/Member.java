@@ -13,8 +13,8 @@ public class Member {
     private String email;
     private String password;
 
-    public static List<Member> members = new ArrayList<>(Arrays.asList(new Member("Test", "test", "1"),
-                                                                       new Member("Joao Francisco", "joao", "2")));
+    public static List<Member> members = new ArrayList<>(Arrays.asList(new Member("Test", "test@test.com", "test"),
+                                                                       new Member("Joao Francisco", "joaofbdsm@gmail.com", "123456")));
 
     public Member(String name, String email, String password) {
         this.name = name;

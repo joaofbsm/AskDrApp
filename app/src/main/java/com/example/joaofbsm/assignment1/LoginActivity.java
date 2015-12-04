@@ -54,27 +54,5 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
-
     }
-
-    /**
-     * TODO
-     *
-     * - Add Content(Create fragments, main menu)
-     * - Map Activity(Check GPS and turn on)
-     * - Add Comments
-     *
-     * - Maybe use DB
-     *
-     */
-
-    /**
-     * GIT LOG
-     *
-     * - About Activity
-     * - Show user name
-     * - Map Activity
-     *
-     */
-
 }

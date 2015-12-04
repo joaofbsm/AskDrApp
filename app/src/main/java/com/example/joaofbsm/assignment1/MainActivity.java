@@ -1,11 +1,13 @@
 package com.example.joaofbsm.assignment1;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import android.app.Fragment;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -57,11 +59,17 @@ public class MainActivity extends AppCompatActivity
 
             buildGoogleApiClient();
 
-            getSupportActionBar().setTitle("Menu");
-
             View headerView = navigationView.getHeaderView(0);
             TextView user_name = (TextView) headerView.findViewById(R.id.textView_username);
             user_name.setText(preferences.getString("user_name", "Default"));
+            TextView user_email = (TextView) headerView.findViewById(R.id.textView_useremail);
+            user_email.setText(preferences.getString("user_email", "default@default"));
+
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_container, new HomeFragment());
+            ft.commit();
+            getSupportActionBar().setTitle("Home");
+            navigationView.getMenu().getItem(0).setChecked(true);
         }
     }
 
@@ -156,14 +164,26 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        boolean fragmentItem = false;
+
+        Fragment fragment = null;
+
         SharedPreferences preferences = getSharedPreferences(getString(R.string.prefence_file_key), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
-        if (id == R.id.nav_diseases) {
-            // Handle the camera action
-        } else if (id == R.id.nav_medicines) {
-
-        } else if (id == R.id.nav_centres) {
+        if (id == R.id.nav_home) {
+            fragment = new HomeFragment();
+            fragmentItem = true;
+        }
+        else if(id == R.id.nav_diseases) {
+            fragment = new DiseaseFragment();
+            fragmentItem = true;
+        }
+        else if (id == R.id.nav_medications) {
+            fragment = new MedicationFragment();
+            fragmentItem = true;
+        }
+        else if (id == R.id.nav_centres) {
             //Intent intent = new Intent(this, MapsActivity.class);
             //startActivity(intent);
             if(mLastLocation != null) {
@@ -175,10 +195,11 @@ public class MainActivity extends AppCompatActivity
                 }
             }
             else {
-                Toast.makeText(this, "No location detected", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "No location detected. Please turn GPS on", Toast.LENGTH_LONG).show();
             }
 
-        } else if (id == R.id.nav_logout) {
+        }
+        else if (id == R.id.nav_logout) {
             editor.remove("user_name");
             editor.remove("user_email");
             editor.remove("user_password");
@@ -187,6 +208,13 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
+        }
+
+        if(fragmentItem && fragment != null) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_container, fragment);
+            ft.commit();
+            getSupportActionBar().setTitle(item.getTitle());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
