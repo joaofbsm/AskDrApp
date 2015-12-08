@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Gives the user the opportunity to create an account to login on the app
@@ -34,9 +35,32 @@ public class SignupActivity extends AppCompatActivity {
         EditText email = (EditText) findViewById(R.id.input_email);
         EditText password = (EditText) findViewById(R.id.input_password);
 
+        // Error check for empty name
+        if(name.getText().length() < 1) {
+            Toast.makeText(getApplicationContext(), "Name can't be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Error check for invalid email
+        for(Member m : Member.members) {
+            if(email.getText().toString().equals(m.getEmail())) {
+                Toast.makeText(getApplicationContext(), "Email already registered", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+
+        // Error check for not long enough password
+        if(password.getText().length() < 6) {
+            Toast.makeText(getApplicationContext(), "Password needs to be longer", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Add new member if everything is ok
         Member.members.add(new Member(name.getText().toString(), email.getText().toString(), password.getText().toString()));
 
+        // Calls back the login activity
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+        finish();
     }
 }
