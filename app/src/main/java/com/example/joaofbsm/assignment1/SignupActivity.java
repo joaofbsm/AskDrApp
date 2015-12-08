@@ -23,8 +23,7 @@ public class SignupActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
@@ -59,8 +58,6 @@ public class SignupActivity extends AppCompatActivity {
         Member.members.add(new Member(name.getText().toString(), email.getText().toString(), password.getText().toString()));
 
         // Calls back the login activity
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
         finish();
     }
 }
